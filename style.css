@@ -1,0 +1,127 @@
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+main {
+  position: absolute;
+  color: white;
+  width: 100%;
+  font-family: monospace;
+}
+
+html {
+  font-family: sans-serif;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+
+/* DEMO-SPECIFIC STYLES */
+.welcome h1 {
+  color: #fff;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #ffa500; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 2.55s steps(30, end),
+    blink-caret .36s step-end infinite;
+}
+
+.box {
+  width: max-content;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chevron {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  color: #ffa500;
+  bottom: 0;
+  animation-delay: 2s;
+  transition: opacity 0.7s ease-in;
+
+  animation:
+    fade-in-chevron linear 2s;
+}
+
+/* Experience */
+.experience {
+  column-count: 3;
+  column-gap: 50px;
+}
+
+.card {
+  margin: 50px;
+  background-color: rgb(153, 153, 153);
+  width: 300px;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: fill;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+}
+
+.left {
+  width: 60%;
+}
+
+.right {
+  width: 40%;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+/* Fade In Styling */
+.fade {
+  top: 50%;
+  left: 25%;
+  margin-top: -125px;
+  position: absolute;
+  transition: opacity 0.7s ease-in;
+}
+
+.fadeOut { opacity: 0; }
+.fadeIn { opacity: 1; }
